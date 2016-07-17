@@ -44,6 +44,14 @@ On Ubuntu 15.04, this means:
     libprotobuf-dev libprotobuf9 protobuf-compiler \
     libzmq3-dev libzmq3 libzmqpp-dev libzmqpp3 libpng12-dev
     cd /usr/local/include && hg clone http://bitbucket.org/eigen/eigen eigen3 && hg up tensorflow_fix && cd -
+    
+On Ubuntu 14.04, this means:
+
+    sudo apt-get install mercurial\
+    hdf5-helpers libhdf5-7  libhdf5-dev python-h5py \
+    libprotobuf-dev protobuf-compiler \
+    libzmq3-dev libzmq3 libzmqpp-dev libzmqpp3 libpng12-dev
+Unable to locate package libhdf5-cpp-8, and libprotobuf9(which is 2.6.1-1 tag in github, default version for 14.04 is 2.5.0)
 
 There are a bunch of options:
 
