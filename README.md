@@ -55,8 +55,8 @@ On Ubuntu 14.04, this means:
 Unable to locate package libhdf5-cpp-8, and libprotobuf9(which is 2.6.1-1 tag in github, default version for 14.04 is 2.5.0)
 cd /usr/local/include && hg clone http://bitbucket.org/eigen/eigen eigen3 && cd -
 
-scons
-sudo scons install
+    scons
+    sudo scons install
 ==============================================================================
 
 There are a bunch of options:
