@@ -5,6 +5,7 @@
 #include <memory>
 #include <math.h>
 #include <string>
+#include <unistd.h>
 #include "extras.h"
 #include "utils.h"
 
