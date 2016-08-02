@@ -1,0 +1,27 @@
+import_to_Eclipse.txt
+ Created on: Aug 2, 2016
+     Author: michael
+
+     
+1. Importing the project into Eclipse
+
+- Click "File | New | Makefile Project with Existing Code". Into "Existing code location", use the path of clstm sources. 
+Don't forget to choose a toolchain for indexing (e.g. Linux Toolchain)
+
+2. Setting the build command to Scons
+
+Right-click on the clstm project (inside the project explorer). Select the "Properties" entry from the dropdown menu, then select "C/C++ Build" in the Properties window 
+and type "scons" inside the "Build Command" text field. Then press Ok.
+
+3. Adding libraries to the project
+
+If Eclipse don't automatically find the libraries (resulting in not finding symbols), right click the project (inside the project explorer), 
+then select "C/C++ general | Paths & Symbols" and inside the tab named "Includes" select "GNU/C++", then press the "Add" button. 
+Select "Filesystem", then enter the correct path to Wesnoth dependencies (e.g. /usr/include/SDL, /usr/include/pango-1.0). 
+After this operation Eclipse should ask you if you want to rebuild the source index (say yes). 
+
+4. configure Eclipse syntax parser
+
+Window -> Preferences -> C/C++ -> Build -> Settings -> Discovery -> CDT GCC Build-in Compiler Settings
+
+in the text box entitled Command to get compiler specs append -std=c++11 (see screen shot cplusplus-2011.png)
