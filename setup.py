@@ -41,7 +41,7 @@ clstm = Extension('_clstm',
             '-Dadd_raw=add','-DNODISPLAY=1','-DTHROW=throw',
             '-DHGVERSION="\\"'+hgversion+'\\""'],
         sources=['clstm.i','clstm.cc','clstm_prefab.cc','extras.cc',
-                 'ctc.cc','clstm_proto.cc','clstm.pb.cc'])
+                 'ctc.cc','clstm_proto.cc','clstm.pb.cc','clstm_compute.cc','batches.cc'])
 
 setup (name = 'clstm',
        version = '0.0',

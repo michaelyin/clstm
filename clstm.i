@@ -73,8 +73,6 @@ struct Classes {
 }
 
 struct Batch {
-  void resize(int,int);
-  void setZero(int,int);
   int rows();
   int cols();
   float &v(int,int);
