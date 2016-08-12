@@ -13,6 +13,7 @@
 #include "extras.h"
 #include "pstring.h"
 #include "utils.h"
+#include "log/log.h"
 
 using namespace Eigen;
 using namespace ocropus;
@@ -169,6 +170,7 @@ int main1(int argc, char **argv) {
 
       test_error = errors / count;
       print("ERROR", trial, test_error, "   ", errors, count);
+      FILE_LOG(logINFO) << "iteration "  << trial <<" ERROR: " << test_error << ", " << errors << ", " << count;
       if (test_error < best_error) {
         best_error = test_error;
         string fname = save_name + ".clstm";
@@ -191,6 +193,16 @@ int main1(int argc, char **argv) {
 }
 
 int main(int argc, char **argv) {
-  TRY { main1(argc, argv); }
-  CATCH(const char *message) { cerr << "FATAL: " << message << endl; }
+  TRY {
+	  //using file for logging
+	  	FILE* file = fopen("/opt/wms/logs/ocr-training.log", "a");
+	  	Output2FILE::Stream() = file;
+	  	string className = ":clstmocrtrain:";
+	  	FILE_LOG(logINFO) << className << "start ocr training ";
+	    main1(argc, argv);
+  }
+  CATCH(const char *message) {
+	  cerr << "FATAL: " << message << endl;
+	  FILE_LOG(logERROR) << "FATAL: " << message;
+  }
 }
