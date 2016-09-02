@@ -1,0 +1,21 @@
+#!/bin/bash
+set -x
+set -a
+find book-chi -name '*.bin.png' | sort -r > chi-all
+sed 1,150d chi-all > chi-train
+sed 150q chi-all > chi-test
+report_every=10
+save_every=1000
+ntrain=400000
+dewarp=center
+display_every=10
+test_every=150
+testset=chi-test.h5
+hidden=800
+lrate=1e-4
+save_name=chi-simfang
+report_time=1
+load=chi-simfang.clstm
+start=176900
+# gdb --ex run --args \
+./clstmocrtrain chi-train chi-test
