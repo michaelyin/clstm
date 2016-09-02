@@ -1,0 +1,5 @@
+check out tesseract-langdata from github. Using the training text for chi_sim:
+
+ocropus-linegen -t chi_sim.training_text -f simfang-1.ttf -m 5000
+
+simfang-1.ttf is uploaded.
